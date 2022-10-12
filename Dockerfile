@@ -18,9 +18,7 @@ COPY --from=base $APP_PATH/.sequelizerc ./.sequelizerc
 COPY --from=base $APP_PATH/node_modules ./node_modules
 COPY --from=base $APP_PATH/package.json ./package.json
 
-RUN addgroup --gid 1001 nodejs && \
-  adduser --uid 1001 nodejs && \
-  chown -R nodejs:nodejs $APP_PATH/build
+RUN chown -R nodejs:nodejs $APP_PATH/build
 
 USER nodejs
 
