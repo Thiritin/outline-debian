@@ -4,8 +4,8 @@ FROM outlinewiki/outline-base as base
 ARG APP_PATH
 WORKDIR $APP_PATH
 
-# ---
-FROM node:16.17-bullseye AS runner
+# 
+FROM node:16.17-bullseye AS production
 
 ARG APP_PATH
 WORKDIR $APP_PATH
